@@ -22,7 +22,7 @@ wandb = "0.16.3"
 # Additional dependencies used in the code but not in requirements.txt
 torch = "*"
 torchvision = "*"
-numpy = "*"
+numpy = "<2.0.0"  # Pin to NumPy 1.x for compatibility with opencv-python-headless
 pandas = "*"
 matplotlib = "*"
 tqdm = "*"
