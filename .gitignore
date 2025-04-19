@@ -1,6 +1,13 @@
+# Project specific
 model_data/
 .ipynb_checkpoints/
 *.pyc
 saved_embeddings/*
 model_data.zip
 __MACOSX/._model_data
+
+# Poetry
+.venv/
+dist/
+__pycache__/
+poetry.lock

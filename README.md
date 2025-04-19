@@ -10,16 +10,48 @@ This repository contains the official inference code for the following paper:
 ![EchoPrime Demo](demo_image.png)
 
 ## How To Use
+
+### Using Poetry (Recommended)
+1) Clone the repository and navigate to the EchoPrime directory
+2) Install Poetry (if not already installed)
+   ```bash
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+3) Install dependencies with Poetry
+   ```bash
+   poetry install
+   ```
+   
+   **Note:** This project is compatible with Python 3.8 to 3.12. Some dependencies may have issues with Python 3.13+.
+   
+   If you encounter an error about "No file/folder found for package echoprime", the project is configured with `package-mode = false` in pyproject.toml to address this.
+4) Download model data 
+    * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/model_data.zip`
+    * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/candidate_embeddings_p1.pt`
+    * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/candidate_embeddings_p2.pt`
+    * `unzip model_data.zip`
+    * `mv candidate_embeddings_p1.pt model_data/candidates_data/`
+    * `mv candidate_embeddings_p2.pt model_data/candidates_data/`
+5) Run the Jupyter notebook
+   ```bash
+   poetry run jupyter notebook
+   ```
+   Then open EchoPrimeDemo.ipynb
+
+### Using requirements.txt (Legacy)
 1) Clone the repository and navigate to the EchoPrime directory
 2) Download model data 
     * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/model_data.zip`
     * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/candidate_embeddings_p1.pt`
     * `wget https://github.com/echonet/EchoPrime/releases/download/v1.0.0/candidate_embeddings_p2.pt`
     * `unzip model_data.zip`
-    *  `mv candidate_embeddings_p1.pt model_data/candidates_data/`
-    *  `mv candidate_embeddings_p2.pt model_data/candidates_data/`
-4) Install `requirements.txt`
-5) Follow EchoPrimeDemo.ipynb notebook
+    * `mv candidate_embeddings_p1.pt model_data/candidates_data/`
+    * `mv candidate_embeddings_p2.pt model_data/candidates_data/`
+3) Install dependencies from requirements.txt
+    ```bash
+    pip install -r requirements.txt
+    ```
+4) Follow EchoPrimeDemo.ipynb notebook
 
 ## Licence
 This project is licensed under the terms of the MIT license.
@@ -28,7 +60,7 @@ This project is licensed under the terms of the MIT license.
 ## FAQ:
 
 ### After processing the images they appear green-tinted.
-Make sure that you have the correct libraries installed. Use requirements.txt to install the dependencies.
+Make sure that you have the correct libraries installed. Use Poetry or requirements.txt to install the dependencies.
 
 
 ## How to run the code in docker?

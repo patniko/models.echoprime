@@ -1,3 +1,7 @@
+# NOTE: Poetry is now the recommended way to manage dependencies for this project.
+# See pyproject.toml for the Poetry configuration.
+# This file is kept for backward compatibility.
+
 ipywidgets==8.1.2
 mysql-connector-python==8.0.31
 opencv-python-headless==4.5.5.64
