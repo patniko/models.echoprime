@@ -11,7 +11,30 @@ This repository contains the official inference code for the following paper:
 
 ## How To Use
 
-### Using Poetry (Recommended)
+### Using Makefile (Easiest)
+1) Clone the repository and navigate to the EchoPrime directory
+2) Install Poetry (if not already installed)
+   ```bash
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+3) Use the provided Makefile for a one-command setup and run:
+   ```bash
+   make setup-and-run
+   ```
+   This will:
+   - Install all dependencies using Poetry
+   - Download model data and embeddings
+   - Start Jupyter notebook
+
+   Then open EchoPrimeDemo.ipynb
+
+   **Note:** You can also run individual commands:
+   - `make setup` - Install dependencies with Poetry
+   - `make download-data` - Download model data and embeddings
+   - `make jupyter` - Start Jupyter notebook
+   - `make help` - Show all available commands
+
+### Using Poetry (Manual)
 1) Clone the repository and navigate to the EchoPrime directory
 2) Install Poetry (if not already installed)
    ```bash
